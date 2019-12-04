@@ -61,7 +61,7 @@ XRECORD_MAX_INDEX = 368
 
 # get the TEMPLATES for exporting DXF files
 TEMPLATES = {k: Template(v) for k, v in json.loads(
-    resources.get('dxf.json.template')).items()}
+    resources.get('templates/dxf.json')).items()}
 
 
 def load_dxf(file_obj, **kwargs):

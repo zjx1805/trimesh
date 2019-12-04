@@ -135,7 +135,7 @@ def export_ply(mesh,
     dtype_color = ('rgba', '<u1', (4))
 
     # get template strings in dict
-    templates = json.loads(resources.get('ply.template'))
+    templates = json.loads(resources.get('templates/ply.json'))
     # start collecting elements into a string for the header
     header = templates['intro']
     header += templates['vertex']

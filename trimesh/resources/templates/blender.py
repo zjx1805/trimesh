@@ -37,7 +37,7 @@ if __name__ == "__main__":
     bpy.ops.object.delete(use_global=True)
 
     # get temporary files from templated locations
-    mesh_pre = $MESH_PRE
+    mesh_pre = r'$MESH_PRE'
     mesh_post = os.path.abspath(r'$MESH_POST')
 
     # When you add objects to blender, other elements are pushed back

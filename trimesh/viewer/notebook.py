@@ -28,12 +28,11 @@ def scene_to_html(scene):
       HTML containing embedded geometry
     """
     # use os.path.join so this works on windows
-    base = resources.get('viewer.html.template')
+    base = resources.get('templates/viewer.html')
     # get export as bytes
     data = scene.export(file_type='glb')
     # encode as base64 string
     encoded = base64.b64encode(data).decode('utf-8')
-
     # replace keyword with our scene data
     result = base.replace('$B64GLTF', encoded)
 

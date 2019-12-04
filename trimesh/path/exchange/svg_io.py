@@ -294,7 +294,7 @@ def export_svg(drawing,
     points = drawing.vertices.view(np.ndarray).copy()
 
     # fetch the export template for SVG files
-    template_svg = Template(resources.get('svg.template.xml'))
+    template_svg = Template(resources.get('templates/svg.xml'))
 
     def circle_to_svgpath(center, radius, reverse):
         radius_str = format(radius, res.export)
