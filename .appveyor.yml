@@ -1,5 +1,5 @@
 build: false
-image: Previous Visual Studio 2015
+image: Visual Studio 2019
 
 environment:
   matrix:
@@ -25,4 +25,4 @@ install:
   - pip install .[easy,test]
 
 test_script:
-  - pytest tests
+  - pytest tests/test_voxel.py
