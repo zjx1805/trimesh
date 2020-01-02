@@ -238,13 +238,10 @@ def rle_to_dense(rle_data, dtype=np.int64):
     values, counts = np.split(np.reshape(rle_data, (-1, 2)), 2, axis=-1)
     if dtype is not None:
         values = np.asanyarray(values, dtype=dtype)
-    try:
-        result = np.repeat(np.squeeze(values, axis=-1),
-                           np.squeeze(counts, axis=-1))
-    except TypeError:
-        # on windows it sometimes fails to cast data type
-        result = np.repeat(np.squeeze(values.astype(np.int64), axis=-1),
-                           np.squeeze(counts.astype(np.int64), axis=-1))
+
+    result = np.repeat(np.squeeze(values, axis=-1),
+                       np.squeeze(counts.astype(np.int64), axis=-1))
+
     return result
 
 
